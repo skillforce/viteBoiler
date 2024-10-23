@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 export const MainLayout = () => {
     return (
-        <div className={cls.mainLayoutContainer}>
+        <div>
             <header>
                 <h1>PatronPay</h1>
                 <nav>
@@ -17,7 +17,7 @@ export const MainLayout = () => {
                     </ul>
                 </nav>
             </header>
-            <main>
+            <main className={cls.mainLayoutContainer}>
                 <Outlet />
             </main>
         </div>

@@ -1,9 +1,9 @@
-import styles from '@pages/LoginPage/ui/LoginPage.module.css';
 import {
     LOCAL_STORAGE_KEYS,
     removeLocalStorageKey,
 } from '@shared/lib/localStorage';
 import { useNavigate } from 'react-router-dom';
+import { Counter } from '@features/Counter';
 
 export const ProtectedPage = () => {
     const navigate = useNavigate();
@@ -15,9 +15,8 @@ export const ProtectedPage = () => {
     return (
         <div>
             Protected Page
-            <button onClick={onBtnClick} className={styles.button}>
-                Logout
-            </button>
+            <button onClick={onBtnClick}>Logout</button>
+            <Counter />
         </div>
     );
 };
