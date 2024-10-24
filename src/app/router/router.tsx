@@ -1,31 +1,39 @@
-import { createBrowserRouter, redirect } from 'react-router-dom';
-import { LoginPage } from '@pages/LoginPage';
-import { ProtectedPage } from '@pages/ProtectedPage';
-import { ProtectedRoutes } from '@app/router/utils/ProtectedRoutes.tsx';
-import { MainLayout } from '@entities/MainLayout';
+import {
+    createBrowserRouter,
+    Navigate,
+    Outlet,
+    RouterProvider,
+} from 'react-router-dom';
+import { Layout, useAuthContext } from '@shared/components/Layout/Layout.tsx';
+import { getRouteLogin } from '@shared/consts/router.ts';
+import {
+    privateRoutes,
+    publicRoutes,
+} from '@app/router/config/routerConfig.tsx';
 
-export const appBrowserRouterConfig = createBrowserRouter([
+function PrivateRoutes() {
+    const { isAuthenticated } = useAuthContext();
+
+    return isAuthenticated ? (
+        <Outlet />
+    ) : (
+        <Navigate to={getRouteLogin()} replace />
+    );
+}
+
+const appBrowserRouterConfig = createBrowserRouter([
     {
-        path: '',
-        element: <MainLayout />,
+        element: <Layout />,
         children: [
+            ...publicRoutes,
             {
-                index: true,
-                element: <LoginPage />,
-            },
-            {
-                element: <ProtectedRoutes />,
-                children: [
-                    {
-                        path: 'protected',
-                        element: <ProtectedPage />,
-                    },
-                ],
+                children: privateRoutes,
+                element: <PrivateRoutes />,
             },
         ],
     },
-    {
-        path: '*',
-        loader: () => redirect('/'),
-    },
 ]);
+
+export const Router = () => {
+    return <RouterProvider router={appBrowserRouterConfig} />;
+};

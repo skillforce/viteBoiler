@@ -1,4 +1,6 @@
-export const loadLocalStorageState = (stateName: string) => {
+import { StorageKeysType } from '@shared/lib/localStorage/localStorageKeys/localStorageKeys.ts';
+
+export const loadLocalStorageState = (stateName: StorageKeysType) => {
     try {
         const serializedState = localStorage.getItem(stateName);
 
@@ -13,17 +15,20 @@ export const loadLocalStorageState = (stateName: string) => {
     }
 };
 
-export const saveLocalStorageState = (stateName: string, value: any) => {
+export const saveLocalStorageState = <T>(
+    keyName: StorageKeysType,
+    value: T,
+): void => {
     try {
         const serializedState = JSON.stringify(value);
-        localStorage.setItem(stateName, serializedState);
+        localStorage.setItem(keyName, serializedState);
     } catch (err) {
         console.log(err);
         throw new Error("Can't save changes in local storage");
     }
 };
 
-export const removeLocalStorageKey = (stateName: string) => {
+export const removeLocalStorageKey = (stateName: StorageKeysType) => {
     try {
         localStorage.removeItem(stateName);
     } catch (err) {

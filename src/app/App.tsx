@@ -1,8 +1,7 @@
-import { appBrowserRouterConfig } from '@app/router/router.tsx';
-import { RouterProvider } from 'react-router-dom';
+import { Router } from '@app/router/router.tsx';
 
 function App() {
-    return <RouterProvider router={appBrowserRouterConfig} />;
+    return <Router />;
 }
 
 export default App;
