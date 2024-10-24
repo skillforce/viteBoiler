@@ -13,6 +13,6 @@ ${interfaceConst} ${typeName} {
 }
 
 export const ${sliceName}Store = create<${typeName}>(() => ({
-    
+    type: '123',
 }));`;
 };

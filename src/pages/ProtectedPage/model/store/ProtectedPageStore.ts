@@ -4,4 +4,6 @@ interface ProtectedPageStoreSchema {
     type: any; // SPECIFY SCHEMA FOR CURRENT STORE
 }
 
-export const ProtectedPageStore = create<ProtectedPageStoreSchema>(() => ({}));
+export const ProtectedPageStore = create<ProtectedPageStoreSchema>(() => ({
+    type: '123',
+}));

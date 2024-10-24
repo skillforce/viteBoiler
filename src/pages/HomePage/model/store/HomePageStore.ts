@@ -4,4 +4,6 @@ interface HomePageStoreSchema {
     type: any; // SPECIFY SCHEMA FOR CURRENT STORE
 }
 
-export const HomePageStore = create<HomePageStoreSchema>(() => ({}));
+export const HomePageStore = create<HomePageStoreSchema>(() => ({
+    type: '123',
+}));
