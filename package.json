@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "typescript:check": "tsc -b",
     "generate:slice": "node scripts/createSlice/index.cjs"
   },
   "dependencies": {

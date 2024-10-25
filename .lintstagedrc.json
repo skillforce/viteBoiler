@@ -1,5 +1,6 @@
 {
   "*.{ts,tsx}": [
+    "bash -c \"tsc $* --noEmit\"",
     "prettier --write",
     "eslint"
   ]

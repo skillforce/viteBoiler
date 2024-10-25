@@ -16,8 +16,9 @@ interface HomePageProps {
 export const HomePage = memo((props: HomePageProps) => {
     const { className } = props;
     const navigate = useNavigate();
-    const { setLoggedIn, name } = useAuthStore();
+    const { setLoggedIn, name, dscscdsc } = useAuthStore();
     console.log(name);
+    console.log(dscscdsc);
     const onLogout = () => {
         removeLocalStorageKey(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
         setLoggedIn(false);
