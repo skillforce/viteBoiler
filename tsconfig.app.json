@@ -23,13 +23,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*", "./dist/*", ""],
-      "@app/*": ["./src/app/*", "./dist/app", ""],
-      "@pages/*": ["./src/pages/*", "./dist/pages", ""],
-      "@entities/*": ["./src/entities/*", "./dist/entities", ""],
-      "@features/*": ["./src/features/*", "./dist/features", ""],
-      "@shared/*": ["./src/shared/*", "./dist/shared", ""]
+      "@app/*": ["./src/app/*", "./dist/app/*", ""],
+      "@pages/*": ["./src/pages/*", "./dist/pages/*", ""],
+      "@entities/*": ["./src/entities/*", "./dist/entities/*", ""],
+      "@features/*": ["./src/features/*", "./dist/features/*", ""],
+      "@shared/*": ["./src/shared/*", "./dist/shared/*", ""]
     }
   },
   "include": ["src"],
-
+  "exclude": []
 }
