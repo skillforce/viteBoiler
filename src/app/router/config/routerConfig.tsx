@@ -4,9 +4,11 @@ import {
     getRouteHome,
     getRouteLogin,
     getRouteProtectedPage,
+    getRouteTablePage,
 } from '@shared/consts/router.ts';
 import { ProtectedPage } from '@pages/ProtectedPage';
 import { LoginPage } from '@pages/LoginPage';
+import { TablePage } from '@/pages/TablePage';
 
 export const privateRoutes: RouteObject[] = [
     {
@@ -16,6 +18,10 @@ export const privateRoutes: RouteObject[] = [
     {
         element: <ProtectedPage />,
         path: getRouteProtectedPage(),
+    },
+    {
+        element: <TablePage />,
+        path: getRouteTablePage(),
     },
 ];
 
