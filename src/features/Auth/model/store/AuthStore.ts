@@ -7,6 +7,7 @@ interface AuthStoreSchema {
 
 export const useAuthStore = create<AuthStoreSchema>((set) => ({
     isLoggedIn: false,
+    name: 'dscsdcsdcsdcsdc',
     setLoggedIn: (newStatus: boolean) =>
         set((state) => ({ ...state, isLoggedIn: newStatus })),
 }));

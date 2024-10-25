@@ -14,7 +14,6 @@ export const Layout = () => {
     const { isLoggedIn } = useAuthStore();
     const isAuthenticated = isLoggedIn;
 
-    console.log(isAuthenticated);
     return (
         <LayoutPrimitive>
             <Outlet context={{ isAuthenticated } satisfies AuthContext} />
