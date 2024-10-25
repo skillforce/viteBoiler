@@ -1,4 +1,4 @@
-import { StorageKeysType } from '@shared/lib/localStorage/localStorageKeys/localStorageKeys.ts';
+import { StorageKeysType } from '../localStorageKeys/localStorageKeys.ts';
 
 export const loadLocalStorageState = (stateName: StorageKeysType) => {
     try {
