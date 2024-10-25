@@ -1,8 +1,7 @@
 {
   "name": "stylesoft-patronpay-web-admin",
   "private": false,
-  "version": "0.0.0",
-  "homepage": ".",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
