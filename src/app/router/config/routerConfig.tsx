@@ -1,6 +1,7 @@
 import { Outlet, redirect, RouteObject } from 'react-router-dom';
 import { HomePage } from '@pages/HomePage';
 import {
+    getRouteApiExample,
     getRouteHome,
     getRouteLogin,
     getRouteProtectedPage,
@@ -9,6 +10,7 @@ import {
 import { ProtectedPage } from '@pages/ProtectedPage';
 import { LoginPage } from '@pages/LoginPage';
 import { TablePage } from '@/pages/TablePage';
+import { ApiExample } from '@pages/ApiExample';
 
 export const privateRoutes: RouteObject[] = [
     {
@@ -18,6 +20,10 @@ export const privateRoutes: RouteObject[] = [
     {
         element: <ProtectedPage />,
         path: getRouteProtectedPage(),
+    },
+    {
+        element: <ApiExample />,
+        path: getRouteApiExample(),
     },
     {
         element: <TablePage />,

@@ -5,7 +5,11 @@ import {
     LOCAL_STORAGE_KEYS,
     removeLocalStorageKey,
 } from '@shared/lib/localStorage';
-import { getRouteLogin, getRouteTablePage } from '@shared/consts/router.ts';
+import {
+    getRouteApiExample,
+    getRouteLogin,
+    getRouteTablePage,
+} from '@shared/consts/router.ts';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@features/Auth';
 
@@ -21,6 +25,9 @@ export const HomePage = memo((props: HomePageProps) => {
     const redirectToTable = () => {
         navigate(getRouteTablePage());
     };
+    const redirectToApiExample = () => {
+        navigate(getRouteApiExample());
+    };
 
     const onLogout = () => {
         removeLocalStorageKey(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
@@ -33,6 +40,7 @@ export const HomePage = memo((props: HomePageProps) => {
             HOME PAGE
             <div>
                 <button onClick={redirectToTable}>TABLE</button>
+                <button onClick={redirectToApiExample}>API EXAMPLE</button>
                 <button onClick={onLogout}> LOGOUT</button>
             </div>
         </div>

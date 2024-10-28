@@ -12,6 +12,7 @@ export function useAuthContext() {
 
 export const Layout = () => {
     const { isLoggedIn } = useAuthStore();
+    console.log(isLoggedIn);
     const isAuthenticated = isLoggedIn;
 
     return (
