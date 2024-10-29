@@ -33,7 +33,7 @@ const LoginPage = ({ className }: LoginPageProps) => {
         } else {
             setLoggedIn(!!loadLocalStorageState(LOCAL_STORAGE_KEYS.AUTH_TOKEN));
         }
-    }, [isLoggedIn]);
+    }, [isLoggedIn, navigate, setLoggedIn]);
 
     return (
         <div className={clsx(s.container, {}, [className])}>

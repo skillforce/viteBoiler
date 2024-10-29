@@ -4,12 +4,13 @@ import {
     Outlet,
     RouterProvider,
 } from 'react-router-dom';
-import { Layout, useAuthContext } from '@shared/components/Layout/Layout.tsx';
+import { Layout } from '@shared/components/Layout/Layout.tsx';
 import { getRouteLogin } from '@shared/consts/router.ts';
 import {
     privateRoutes,
     publicRoutes,
 } from '@app/router/config/routerConfig.tsx';
+import { useAuthContext } from '@shared/context/useAuthContext.ts';
 
 function PrivateRoutes() {
     const { isAuthenticated } = useAuthContext();

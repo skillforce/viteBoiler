@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export const apiClient = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: BASE_URL,
     timeout: 12000,
     withCredentials: true,
     headers: {

@@ -6,8 +6,10 @@ import {
     useDeletePost,
     useGetPosts,
     useUpdatePost,
-} from '../../model/api/postsApi.ts';
+} from '../../model/api/postsQueryHooks.ts';
 import { useApiExampleStore } from '../../model/store/ApiExampleStore.ts';
+import { useNavigate } from 'react-router-dom';
+import { getRouteHome } from '@shared/consts/router.ts';
 
 interface ApiExampleProps {
     className?: string;
@@ -15,6 +17,7 @@ interface ApiExampleProps {
 
 export const ApiExample = memo((props: ApiExampleProps) => {
     const { className } = props;
+    const navigate = useNavigate();
     const { data, isLoading, error } = useGetPosts();
     const {
         mutate: createPost,
@@ -61,6 +64,9 @@ export const ApiExample = memo((props: ApiExampleProps) => {
     const onUpdatePostById = (postId: number) => () => {
         updatePostById(postId);
     };
+    const onBackButtonPress = () => {
+        navigate(getRouteHome());
+    };
 
     if (
         isLoading ||
@@ -82,6 +88,7 @@ export const ApiExample = memo((props: ApiExampleProps) => {
 
     return (
         <div className={clsx(cls.ApiExample, {}, [className])}>
+            <button onClick={onBackButtonPress}>BACK</button>
             <div className={cls.addPost}>
                 <div>ADD POST:</div>
                 <input

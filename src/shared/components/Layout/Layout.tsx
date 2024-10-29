@@ -1,18 +1,11 @@
 import { ReactNode } from 'react';
 import s from './Layout.module.scss';
-import { Outlet, useOutletContext } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useAuthStore } from '@features/Auth';
-
-type AuthContext = {
-    isAuthenticated: boolean;
-};
-export function useAuthContext() {
-    return useOutletContext<AuthContext>();
-}
+import { AuthContext } from '../../context/useAuthContext.ts';
 
 export const Layout = () => {
     const { isLoggedIn } = useAuthStore();
-    console.log(isLoggedIn);
     const isAuthenticated = isLoggedIn;
 
     return (

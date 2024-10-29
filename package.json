@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && cross-env VITE_API_BASE_URL=https://jsonplaceholder.typicode.com vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -27,6 +27,7 @@
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "cross-env": "^7.0.3",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
