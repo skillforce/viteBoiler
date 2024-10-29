@@ -37,7 +37,8 @@ export const HomePage = memo((props: HomePageProps) => {
 
     return (
         <div className={clsx(cls.HomePage, {}, [className])}>
-            HOME PAGE ENV : {import.meta.env.VITE_API_BASE_URL}
+            HOME PAGE
+            <h1>API URL(ENV) : {import.meta.env.VITE_API_BASE_URL}</h1>
             <div>
                 <button onClick={redirectToTable}>TABLE</button>
                 <button onClick={redirectToApiExample}>API EXAMPLE</button>
