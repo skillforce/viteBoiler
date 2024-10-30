@@ -12,7 +12,7 @@ ${interfaceConst} ${typeName} {
   type:any // SPECIFY SCHEMA FOR CURRENT STORE
 }
 
-export const ${sliceName}Store = create<${typeName}>(() => ({
+export const use${sliceName}Store = create<${typeName}>(() => ({
     type: '123',
 }));`;
 };
