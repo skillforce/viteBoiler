@@ -1,5 +1,5 @@
-import { PostSchema } from '../types/posts.ts';
 import { apiClient } from '@shared/lib/apiClient/apiClient.ts';
+import { PostSchema } from '@entities/Post';
 
 export const POSTS_API_REQUESTS = {
     fetchPosts: async (): Promise<PostSchema[]> => {
@@ -23,14 +23,5 @@ export const POSTS_API_REQUESTS = {
         const { data } = await apiClient.put(`/posts/${postId}`, updatedPost);
 
         return { updatedData: data, postId };
-    },
-    createPost: async (postTitle: string): Promise<PostSchema> => {
-        const newPost: Partial<PostSchema> = {
-            body: 'testBody',
-            title: postTitle,
-            userId: 1,
-        };
-        const { data } = await apiClient.post('/posts', newPost);
-        return data;
     },
 };
