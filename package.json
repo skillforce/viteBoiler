@@ -7,8 +7,8 @@
         "dev": "vite",
         "build": "tsc -b && cross-env VITE_API_BASE_URL=https://jsonplaceholder.typicode.com vite build",
         "preview": "vite preview",
-        "lint": "eslint .",
-        "format": "prettier --write .",
+        "lint": "eslint **/*.{ts,tsx}",
+        "prettier": "npx prettier --write **/*.{ts,tsx,json}",
         "typescript:check": "tsc -b",
         "generate:slice": "node scripts/createSlice/index.cjs"
     },

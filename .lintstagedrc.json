@@ -1,6 +1,3 @@
 {
-  "*.{ts,tsx}": [
-    "prettier --write",
-    "eslint"
-  ]
+    "*.{ts,tsx}": ["prettier --write", "eslint"]
 }

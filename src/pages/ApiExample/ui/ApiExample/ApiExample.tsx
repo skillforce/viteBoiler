@@ -35,6 +35,17 @@ export const ApiExample = memo((props: ApiExampleProps) => {
     const posts = usePostsStore((state) => state.posts);
     const setPosts = usePostsStore((state) => state.setPosts);
 
+    const isPageError =
+        isGetPostsError ||
+        isCreateNewPostError ||
+        updatePostByIdError ||
+        deletePostError;
+    const isPageLoading =
+        isGetPostsLoading ||
+        isCreateNewPostPending ||
+        deletePostPending ||
+        updatePostByIdPending;
+
     useEffect(() => {
         if (data) {
             setPosts(data);
@@ -45,21 +56,11 @@ export const ApiExample = memo((props: ApiExampleProps) => {
         navigate(getRouteHome());
     };
 
-    if (
-        isGetPostsLoading ||
-        isCreateNewPostPending ||
-        deletePostPending ||
-        updatePostByIdPending
-    ) {
+    if (isPageLoading) {
         return <div>----LOADING----</div>;
     }
 
-    if (
-        isGetPostsError ||
-        isCreateNewPostError ||
-        deletePostError ||
-        updatePostByIdError
-    ) {
+    if (isPageError) {
         return <div>----ERROR----</div>;
     }
 
