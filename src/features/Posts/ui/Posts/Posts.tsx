@@ -42,6 +42,7 @@ export const Posts = memo((props: PostsProps) => {
             <div className={cls.posts}>
                 {posts.map(({ id, title }) => (
                     <Post
+                        key={id}
                         id={id}
                         title={title}
                         onDelete={onDeletePostById}
