@@ -66,7 +66,7 @@ export const ApiExample = memo((props: ApiExampleProps) => {
 
     return (
         <div className={clsx(cls.ApiExample, {}, [className])}>
-            <button onClick={onBackButtonPress}>PREV_PAGE_1</button>
+            <button onClick={onBackButtonPress}>PREV_PAGE</button>
             <AddPost />
             <Posts posts={posts} />
         </div>

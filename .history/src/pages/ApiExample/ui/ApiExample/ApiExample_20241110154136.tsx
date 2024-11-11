@@ -1,4 +1,8 @@
-import { AddPost } from '@features/AddPost';
+import { clsx } from 'clsx';
+import cls from './ApiExample.module.scss';
+import { memo, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getRouteHome } from '@shared/consts/router.ts';
 import {
     Posts,
     useCreatePost,
@@ -7,11 +11,7 @@ import {
     usePostsStore,
     useUpdatePost,
 } from '@features/Posts';
-import { getRouteHome } from '@shared/consts/router.ts';
-import { clsx } from 'clsx';
-import { memo, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import cls from './ApiExample.module.scss';
+import { AddPost } from '@features/AddPost';
 
 interface ApiExampleProps {
     className?: string;
@@ -55,7 +55,7 @@ export const ApiExample = memo((props: ApiExampleProps) => {
     const onBackButtonPress = () => {
         navigate(getRouteHome());
     };
-    
+
     if (isPageLoading) {
         return <div>----LOADING----</div>;
     }
@@ -66,7 +66,7 @@ export const ApiExample = memo((props: ApiExampleProps) => {
 
     return (
         <div className={clsx(cls.ApiExample, {}, [className])}>
-            <button onClick={onBackButtonPress}>PREV_PAGE_1</button>
+            <button onClick={onBackButtonPress}>BACK</button>
             <AddPost />
             <Posts posts={posts} />
         </div>
